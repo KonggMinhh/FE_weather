@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather Forecast</title>
+        <!-- Link Favicon -->
+        <link
+            rel="shortcut icon"
+            href="./favicon.svg
+        "
+            type="image/x-icon"
+        />
+        <!-- Embed GG Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Embed styles css -->
+        <link rel="stylesheet" href="./assets/css//reset.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
+        <!-- Embed js  -->
+        <script src="./assets/js/app.js" type="module"></script>
+        <script src="./assets/js/route.js" type="module"></script>
+        <!-- EMBED SOCKET IO -->
+        <script
+            src="https://cdn.socket.io/4.7.2/socket.io.min.js"
+            integrity="sha384-mZLF4UVrpi/QTWPA7BjNPEnkIfRFn4ZEO3Qt/HFklTJBj/gBOV8G3HcKn4NfQblz"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <!-- * * * Header * * * -->
+        <header class="header">
+            <div class="header-inner">
+                <div class="container">
+                    <!-- Logo -->
+                    <a href="/" class="logo">
+                        <img
+                            src="./assets/images/logo-1.png"
+                            alt="Logo"
+                            width="364"
+                            height="58"
+                        />
+                        <span class="logo-text">Weather</span>
+                    </a>
+                    <!-- Search -->
+                    <div class="search-view" data-search-view>
+                        <!-- Search wrapper -->
+                        <div class="search-wrapper">
+                            <!-- Input -->
+                            <input
+                                type="search"
+                                name="search"
+                                placeholder="Search city..."
+                                autocomplete="off"
+                                data-search-field
+                                class="search-field"
+                                spellcheck="false"
+                                required
+                            />
+                            <span class="m-icon leading-icon">search</span>
+                            <!-- Button -->
+                            <button
+                                class="icon-btn leading-icon has-state"
+                                aria-label="close-search"
+                                data-search-toggler
+                            >
+                                <span class="m-icon">arrow_back</span>
+                            </button>
+                        </div>
+                        <!-- Search result -->
+                        <div class="search-result" data-search-result></div>
+                    </div>
+                    <!-- CTA -->
+                    <div class="header-actions">
+                        <button
+                            class="icon-btn has-state"
+                            aria-label="open search"
+                            data-search-toggler
+                        >
+                            <span class="m-icon icon">search</span>
+                        </button>
+                        <a
+                            href="/weather-map.html"
+                            class="btn-primary has-state"
+                        >
+                            <span class="m-icon icon">Map</span>
+                            <span class="span">Weather Maps</span>
+                        </a>
+                        <a
+                            href="#/current-location"
+                            class="btn-primary has-state"
+                            data-current-location-btn
+                        >
+                            <span class="m-icon">my_location</span>
+                            <span class="span">Current Location</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- * * * Main * * * -->
+        <main>
+            <article class="container" data-container>
+                <!-- Content left -->
+                <div class="content-left">
+                    <div class="content-left-inner">
+                        <!-- * * * Current Weather * * * -->
+                        <section
+                            class="section current-weather"
+                            aria-label="current weather"
+                            data-current-weather
+                        ></section>
+                        <!-- * * * Weather 5 Forecast * * * -->
+                        <section
+                            class="section forecast"
+                            aria-labelledby="forecast-label"
+                            data-5-day-forecast
+                        ></section>
+                    </div>
+                </div>
+                <!-- Content right -->
+                <div class="content-right">
+                    <!-- Highlight  -->
+                    <section
+                        class="section highlights"
+                        aria-labelledby="highlights-label"
+                        data-highlights
+                    ></section>
+                    <!-- Hourly -->
+                    <section
+                        class="section hourly-forecast"
+                        aria-label="hourly forecast"
+                        data-hourly-forecast
+                    ></section>
+                </div>
+                <!-- Loading -->
+                <div class="loading" data-loading></div>
+            </article>
+        </main>
+        <!-- * * * Error * * * -->
+        <section class="error-content" data-error-content>
+            <h2 class="heading">404</h2>
+            <p class="body-1">Page not found !</p>
+            <a href="#/current-location" class="btn-primary">
+                <span class="span">Go Home</span>
+            </a>
+        </section>
+
+        <!-- * * * Footer * * *  -->
+        <footer class="footer">
+            <p class="body-3">Coding by with Kong Minh 2024</p>
+            <p class="body-3">
+                Powered By
+                <a
+                    href="https://openweathermap.org/"
+                    title="Free OpenWeather Api"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <img
+                        src="./assets/images/openweather.png"
+                        width="150"
+                        height="30"
+                        loading="lazy"
+                        alt="OpenWeather"
+                    />
+                </a>
+            </p>
+        </footer>
+    </body>
+</html>
